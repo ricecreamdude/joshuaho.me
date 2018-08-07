@@ -1,0 +1,19 @@
+{
+  "name": "joshuaho.me",
+  "version": "1.0.0",
+  "description": "My Public Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ricecreamdude/joshuaho.me.git"
+  },
+  "author": "Joshua Ho",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ricecreamdude/joshuaho.me/issues"
+  },
+  "homepage": "https://github.com/ricecreamdude/joshuaho.me#readme"
+}
