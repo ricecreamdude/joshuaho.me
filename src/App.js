@@ -1,16 +1,15 @@
 import React from 'react';
 
-import { Container } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 import Home from './views/Home';
 
 function App() {
- 
-  return (
-    <Container>
+  return (  
+    <Box>
+      {/* We will use this area to route to different pages in the future */}  
       <Home />
-      
-    </Container>
+    </Box>
   );
 
 }

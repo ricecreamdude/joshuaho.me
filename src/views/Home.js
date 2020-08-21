@@ -1,11 +1,17 @@
 import React from 'react';
 
+import { Box } from '@material-ui/core'
+
+import Hero from '../components/Hero/Hero';
+import Header from '../components/Header/Header'
+
 function Home(){
 
     return(
-        <div>
-            <h1>HI I AM HOME PAGE</h1>
-        </div>
+        <Box>
+            <Header/>
+            <Hero />
+        </Box>
     )
 
 };
