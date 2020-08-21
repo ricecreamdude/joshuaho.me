@@ -20,14 +20,16 @@ function Hero(){
     const classes = useStyles();
 
     return(
-        <Box display="flex" className={classes.root} alignItems="center">
-            <Container maxWidth="sm">
-                <Typography component="h1" variant="h4" >
-                    Hi, I'm Joshua Ho. <br />
-                    I'm a Web Developer
-                </Typography>
-             </Container>
-        </Box>
+        <div>
+            <Box display="flex" className={classes.root} alignItems="center">
+                <Container maxWidth="sm">
+                    <Typography component="h1" variant="h3" >
+                        Hi, I'm Joshua Ho. <br />
+                        I'm a Web Developer
+                    </Typography>
+                </Container>
+            </Box>
+        </div>
     )
 }
 
