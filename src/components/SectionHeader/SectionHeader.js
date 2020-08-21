@@ -7,7 +7,7 @@ const useStyles = makeStyles( theme => ({
     root:{
         display: "flex",
         flexDirection: "column",
-        padding: theme.spacing(12),
+        paddingBottom: theme.spacing(12),
     },
     text:{
         fontWeight: "700",
@@ -16,8 +16,7 @@ const useStyles = makeStyles( theme => ({
     },
     hrule:{
         width: "80px",
-        color: "rgb(68, 70, 73)",
-        borderBottom: "5px solid rgb(68, 70, 73)" 
+        borderBottom: "5px solid #444649"
     }
 }))
 

@@ -2,6 +2,8 @@ import React from 'react';
 
 import SectionHeader from '../SectionHeader/SectionHeader';
 
+import { Container } from '@material-ui/core';
+
 import { makeStyles } from '@material-ui/core/styles';
 
 //Why do we need to wrap this in ()?
@@ -16,9 +18,11 @@ function Projects(){
     const classes = useStyles();
 
     return(
-        <div className={classes.root}>
+        <section className={classes.root}>
             <SectionHeader text="Projects" />
-        </div>
+            {/* <Container maxWidth="md">
+            </Container> */}
+        </section>
 
     )
 }

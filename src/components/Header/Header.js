@@ -5,7 +5,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles({
+const useStyles = makeStyles( theme => ({
     root:{
         height:"60px",
         backgroundColor: "#1B242F"
@@ -18,8 +18,7 @@ const useStyles = makeStyles({
         width:"1.4em",
         height:"1.4em",
     }
-
-})
+}))
 
 function Header(){
 
@@ -29,7 +28,7 @@ function Header(){
         <div>
             <AppBar position="fixed" className={classes.root}>
                 <Toolbar className={classes.toolbar}>
-                    <IconButton edge="end" className={classes.menuButton} color="inherit" aria-label="menu">
+                    <IconButton edge="end" className={classes.menuButton} aria-label="menu">
                         <MenuIcon m={4} className={classes.button}/>
                     </IconButton>
                 </Toolbar>
