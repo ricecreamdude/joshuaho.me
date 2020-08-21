@@ -3,18 +3,14 @@ import React from 'react';
 import { Box, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 
-
-
-const useStyles = makeStyles({
+const useStyles = makeStyles( theme => ({
     root:{
         display: "flex",
         flexDirection: "column",
-        marginBottom: "96px",
-
+        padding: theme.spacing(12),
     },
     text:{
         fontWeight: "700",
-        color: "rgb(68, 70, 73)",
         marginBottom:"10px",
         textTransform: "uppercase"        
     },
@@ -23,7 +19,7 @@ const useStyles = makeStyles({
         color: "rgb(68, 70, 73)",
         borderBottom: "5px solid rgb(68, 70, 73)" 
     }
-})
+}))
 
 
 

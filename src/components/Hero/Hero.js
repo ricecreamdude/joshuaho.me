@@ -4,16 +4,16 @@ import { Container, Box } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles( {
+const useStyles = makeStyles( (theme) => ({
     root:{
         textAlign: "center",
         height: "100vh",
-        paddingTop: "16px",
-        backgroundColor: "#252934",
+        padding: `${theme.spacing(2)} 0`,
+        backgroundColor: theme.palette.background.dark,
         color: "white"
     },  
 
-} );
+}));
 
 function Hero(){
 
