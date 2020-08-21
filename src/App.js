@@ -11,7 +11,6 @@ function App() {
       <Home />
     </Box>
   );
-
 }
 
 export default App;

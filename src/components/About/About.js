@@ -8,7 +8,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import SectionHeader from '../SectionHeader/SectionHeader'
 import SkillCard from './SkillCard';
 
-const useStyles = makeStyles((theme)=>({
+import { Speed, Fingerprint , Group, Extension } from '@material-ui/icons';
+
+const useStyles = makeStyles( (theme)=>({
 
     root:{}
 
@@ -20,40 +22,40 @@ function About(){
     const skillsData = [
         {
             title:"Fast",
-            text:"DEMO TEXT",
-            icon:""    
+            text:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+            icon: Speed
         },
         {
             title:"Responsive",
-            text:"DEMO TEXT",
-            icon:""    
+            text:"Ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud",
+            icon: Fingerprint
         },
         {
             title:"Dynamic",
-            text:"DEMO TEXT",
-            icon:""    
+            text:"Exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            icon: Group
         },
         {
             title:"Intuitive",
-            text:"DEMO TEXT",
-            icon:""    
+            text:"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum",
+            icon: Extension
         },
     ]
 
+    const SkillsSection = skillsData.map( (skill) => {
+
+        return(
+            <SkillCard title={skill.title} text={skill.text} icon={skill.icon} key={skill.title}/>
+        )
+    })
+
     return(
-        <section>
+        <Container component="section">
             <SectionHeader text="About" />
             <Grid container spacing={1}>
-                {
-                    skillsData.map( (skill) => {
-
-                        return(
-                            <SkillCard title={skill.title} text={skill.text} key={skill.title}/>
-                        )
-                    })
-                }
+                { SkillsSection }
             </Grid>
-        </section>
+        </Container>
     )
 }
 

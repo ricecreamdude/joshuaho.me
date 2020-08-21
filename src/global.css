@@ -1,3 +1,12 @@
+/* --viridian-green: #129490ff;
+--red-salsa: #f03a47ff;
+--rich-black-fogra-29: #011627ff;
+--purpureus: #9055a2ff;
+--amethyst: #9067c6ff; */
+
+/* Move this into a MUI Global CSS theme*/
+/* https://material-ui.com/customization/globals/ */
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
