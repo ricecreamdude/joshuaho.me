@@ -28,7 +28,7 @@ const useStyles = makeStyles( (theme)=>({
 
 }))
 
-function SkillCard(props){
+function AboutCard(props){
 
     const classes = useStyles();
     const Icon = props.icon;
@@ -50,4 +50,4 @@ function SkillCard(props){
 }
 
 
-export default SkillCard;
+export default AboutCard;

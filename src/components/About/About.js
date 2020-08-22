@@ -6,7 +6,7 @@ import { Container, Grid } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 import SectionHeader from '../SectionHeader/SectionHeader'
-import SkillCard from './SkillCard';
+import AboutCard from './AboutCard';
 
 import { Speed, Fingerprint , Group, Extension } from '@material-ui/icons';
 
@@ -45,7 +45,7 @@ function About(){
     const SkillsSection = skillsData.map( (skill) => {
 
         return(
-            <SkillCard title={skill.title} text={skill.text} icon={skill.icon} key={skill.title}/>
+            <AboutCard title={skill.title} text={skill.text} icon={skill.icon} key={skill.title}/>
         )
     })
 
@@ -55,6 +55,7 @@ function About(){
             <Grid container spacing={1}>
                 { SkillsSection }
             </Grid>
+
         </Container>
     )
 }
