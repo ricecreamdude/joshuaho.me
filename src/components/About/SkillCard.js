@@ -10,9 +10,16 @@ const useStyles = makeStyles( (theme)=>({
         marginBottom: theme.spacing(6)
     },
     icon:{
-        width: theme.spacing(7),
-        height: theme.spacing(7),
+        width: theme.spacing(6),
+        height: theme.spacing(6),
         padding: theme.spacing(2),
+        color: "white",
+        backgroundColor: theme.palette.primary.main,
+        borderRadius: '50px',
+        marginBottom: theme.spacing(1)
+    },
+    iconBackground:{
+        backgroundColor: theme.palette.primary.main
     },
     title:{
         marginBottom: theme.spacing(2)

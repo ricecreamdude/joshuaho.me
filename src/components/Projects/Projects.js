@@ -13,6 +13,12 @@ const useStyles = makeStyles( (theme) => ({
     }
 }))
 
+
+//Features:
+
+//Filter between tagged projects
+//Displays all portfolio items appropriately
+
 function Projects(){
 
     const classes = useStyles();

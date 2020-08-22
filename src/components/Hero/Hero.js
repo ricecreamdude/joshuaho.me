@@ -12,7 +12,10 @@ const useStyles = makeStyles( (theme) => ({
         backgroundColor: theme.palette.background.dark,
         color: "white"
     },  
-
+    name:{
+        color: theme.palette.primary.main,
+        fontSize: "56px"
+    }
 }));
 
 function Hero(){
@@ -24,7 +27,7 @@ function Hero(){
             <Box display="flex" className={classes.root} alignItems="center">
                 <Container maxWidth="sm">
                     <Typography component="h1" variant="h3" >
-                        Hi, I'm Joshua Ho. <br />
+                    Hi, I'm <span className={classes.name}>Joshua Ho</span>. <br />
                         I'm a Web Developer
                     </Typography>
                 </Container>

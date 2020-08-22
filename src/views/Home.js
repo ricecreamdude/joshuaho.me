@@ -17,6 +17,7 @@ function Home(){
             <Hero />
             <About />
             <Projects />
+            {/* Proud to have worked with some companies */}
         </Box>
     )
 

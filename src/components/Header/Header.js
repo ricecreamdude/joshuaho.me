@@ -17,6 +17,7 @@ const useStyles = makeStyles( theme => ({
     button:{
         width:"1.4em",
         height:"1.4em",
+        color: "white"
     }
 }))
 
