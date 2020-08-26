@@ -3,6 +3,7 @@ const projectData = [
         companyTitle:"Dermatology Arts",
         cardImage: "./images/portfolio/dermarts/logo.png",
         techUsed:"HTML/CSS",
+        url:"https://dermatologyarts.com/",
         modalImages:[],
         modalImageTemp:'./images/portfolio/dermarts/dermatology_arts_modal.jpg',
         modalSubtitle:"Bellevue’s Top Dermatologists",

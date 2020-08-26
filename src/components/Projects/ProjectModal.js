@@ -4,8 +4,10 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import { Modal, Button, Backdrop, Fade, } from '@material-ui/core';
 
-import { Card, CardActionArea, CardMedia, CardContent, CardActions} from '@material-ui/core';
+import { Card, CardActionArea, CardMedia, CardContent, Link} from '@material-ui/core';
 import { Typography } from '@material-ui/core'
+
+import { Close, OpenInNew } from '@material-ui/icons';
 
 
 const useStyles = makeStyles( theme => ({
@@ -47,7 +49,7 @@ const useStyles = makeStyles( theme => ({
         height:"36px",
         backgroundColor: theme.palette.primary.main,
         color: 'white',
-        width: '100px'
+        width: '120px'
     },
     closeButton:{
         height: "36px",
@@ -79,28 +81,31 @@ function ProjectModal( props ){
                             <Typography component="h4" variant="h4" className={classes.title}>
                                 {props.data.companyTitle}
                             </Typography>
-                            <Typography component="p" className={classes.subtitle}>
+                            <Typography component="p" variant="p" className={classes.subtitle}>
                                 {props.data.modalSubtitle}
                             </Typography>
                         </div>
                         <div className={classes.hr} />
-                        <Typography component="p">
+                        <Typography component="p" variant="p">
                             {props.data.modalDescription}
                         </Typography>
                     </CardContent>
                     <CardActionArea className={classes.actionsContainer}>
                         {/* View Site */}
-                        <Button 
-                            onClick={props.handleClose}
-                            className={classes.viewSiteButton}
-                        >
-                            View Site
-                        </Button>
+                        <Link href={props.data.url} target="_blank" rel="noopener" underline="none">
+                            <Button 
+                                onClick={props.handleClose}
+                                className={classes.viewSiteButton}
+                            >
+                                View Site <OpenInNew p={1} />
+
+                            </Button>
+                        </Link>
                         <Button 
                             onClick={props.handleClose}
                             className={classes.closeButton}
                         >
-                            X
+                            <Close />
                         </Button>
                     </CardActionArea>
                 </Card>

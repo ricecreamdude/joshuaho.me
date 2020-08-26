@@ -12,9 +12,10 @@ const useStyles = makeStyles( (theme) => ({
         backgroundColor: theme.palette.background.dark,
         color: "white"
     },  
+    text:{ fontSize:"40px"},
     name:{
         color: theme.palette.primary.main,
-        fontSize: "56px"
+        fontSize: "48px"
     }
 }));
 
@@ -26,9 +27,9 @@ function Hero(){
         <div>
             <Box display="flex" className={classes.root} alignItems="center">
                 <Container maxWidth="sm">
-                    <Typography component="h1" variant="h3" >
+                    <Typography component="h1" variant="h3" className={classes.text} >
                     Hi, I'm <span className={classes.name}>Joshua Ho</span>. <br />
-                        I'm a Web Developer
+                        I'm a full-stack web developer
                     </Typography>
                 </Container>
             </Box>
