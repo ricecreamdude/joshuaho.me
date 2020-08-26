@@ -1,11 +1,24 @@
 import React from 'react';
 
-import { Grid, Typography } from '@material-ui/core'
+import { Grid, Typography, Card, CardMedia, CardActionArea, Modal} from '@material-ui/core'
+import { Fade, Backdrop } from '@material-ui/core'
+
+import ProjectModal from './ProjectModal'
 
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles( theme => ({
-    root:{}
+    root:{
+        width: "100%",
+        boxShadow:"none"
+    },
+    cardImage:{
+        height: "280px",
+        width: "100%"
+    },
+    cardTitle:{
+        fontSize: ""
+    }
 }));
 
 //Component Plan:
@@ -23,18 +36,39 @@ const useStyles = makeStyles( theme => ({
     //HR
 
     //Project description
-
-    
     //Visit Site
     //Close Button 
 
 export default function ProjectCard(props){
 
+    const classes = useStyles();
+    const [open, setOpen] = React.useState(false);
+
+    const handleOpen = () => setOpen(true)
+    const handleClose = () => setOpen(false);
+
     return(
         <Grid item xs={12} md={6} lg={4}>
-            <Typography variant="h3">
-                {props.data.companyTitle}
-            </Typography>
+            <Card className={classes.root}>
+                <CardActionArea
+                    onClick={handleOpen}
+                >
+                    <CardMedia 
+                        className={classes.cardImage}
+                        image={props.data.cardImage}
+                        title={props.data.companyTitle}
+                    />
+                    {/* <Typography variant="h3" className={classes.cardTitle}>
+                        {props.data.companyTitle}
+                    </Typography> */}
+                </CardActionArea>
+                <ProjectModal 
+                    open={open}
+                    handleClose={handleClose}
+                    data={props.data}
+                />
+                
+            </Card>
         </Grid>
     )
 }
