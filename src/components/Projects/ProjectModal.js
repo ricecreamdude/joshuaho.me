@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 import { Modal, Button, Backdrop, Fade, } from '@material-ui/core';
 
-import { Card, CardActionArea, CardMedia, CardContent, Link} from '@material-ui/core';
+import { Card, CardActions, CardMedia, CardContent, Link} from '@material-ui/core';
 import { Typography } from '@material-ui/core'
 
 import { Close, OpenInNew } from '@material-ui/icons';
@@ -90,7 +90,7 @@ function ProjectModal( props ){
                             {props.data.modalDescription}
                         </Typography>
                     </CardContent>
-                    <CardActionArea className={classes.actionsContainer}>
+                    <CardActions className={classes.actionsContainer}>
                         {/* View Site */}
                         <Link href={props.data.url} target="_blank" rel="noopener" underline="none">
                             <Button 
@@ -107,7 +107,7 @@ function ProjectModal( props ){
                         >
                             <Close />
                         </Button>
-                    </CardActionArea>
+                    </CardActions>
                 </Card>
             </Fade>
         </Modal>
