@@ -30,13 +30,18 @@ const useStyles = makeStyles( theme => ({
         width: "100%",
         flexDirection:"column",
     },
+    hoverTitle:{},
+    hoverSubtitle:{},
     cardHalf:{
         display:"flex",
         flexGrow:"1",
         border: "1px solid black",
         justifyContent:"center",
-        alignItems:"center"
-    }
+        alignItems:"center",
+        textAlign: "center",
+        flexDirection:"column",
+    },
+
 }));
 
 //Component Plan:
@@ -110,7 +115,9 @@ export default function ProjectCard(props){
                 display="flex"
             >
                 <Box className={classes.cardHalf}>
-                    {props.data.companyTitle}
+                    <Typography variant="h4" className={classes.hoverTitle}>{props.data.companyTitle}</Typography>
+                    <span className={classes.hoverSubtitle}></span>
+                    {props.data.techUsed}
                 </Box>
                 <Box className={classes.cardHalf}>
                     <Button
