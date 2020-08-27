@@ -53,7 +53,7 @@ const useStyles = makeStyles( theme => ({
     },
     closeButton:{
         height: "36px",
-        width: "36px"
+        width: "12px"
     },
 }))
 

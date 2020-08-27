@@ -7,7 +7,7 @@ const useStyles = makeStyles( theme => ({
     root:{
         display: "flex",
         flexDirection: "column",
-        paddingBottom: theme.spacing(12),
+        paddingBottom: theme.spacing(10),
     },
     text:{
         fontWeight: "700",
@@ -15,7 +15,7 @@ const useStyles = makeStyles( theme => ({
         textTransform: "uppercase"        
     },
     hrule:{
-        width: "80px",
+        width: "72px",
         borderBottom: "5px solid #444649"
     }
 }))
