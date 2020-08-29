@@ -6,7 +6,6 @@ import { Fade, Backdrop } from '@material-ui/core'
 import ProjectModal from './ProjectModal'
 
 import { makeStyles } from '@material-ui/core/styles'
-import { Visibility } from '@material-ui/icons';
 
 const useStyles = makeStyles( theme => ({
     grid:{
@@ -30,12 +29,17 @@ const useStyles = makeStyles( theme => ({
         width: "100%",
         flexDirection:"column",
     },
-    hoverTitle:{},
-    hoverSubtitle:{},
+    hoverTitle:{
+        fontWeight: '700',
+        fontSize: '2rem'
+    },
+    hoverSubtitle:{
+        color: theme.palette.primary.main,
+        fontWeight: '400'
+    },
     cardHalf:{
         display:"flex",
         flexGrow:"1",
-        border: "1px solid black",
         justifyContent:"center",
         alignItems:"center",
         textAlign: "center",
@@ -43,24 +47,6 @@ const useStyles = makeStyles( theme => ({
     },
 
 }));
-
-//Component Plan:
-
-//Project Card
-    //Title
-    //Technologies Used
-    //Learn More -> Modal
-
-//Modal
-    //2-3 images of work done on the projects
-    //L & R buttons
-    //Project Title
-    //Sub Title
-    //HR
-
-    //Project description
-    //Visit Site
-    //Close Button 
 
 export default function ProjectCard(props){
 
@@ -116,12 +102,15 @@ export default function ProjectCard(props){
             >
                 <Box className={classes.cardHalf}>
                     <Typography variant="h4" className={classes.hoverTitle}>{props.data.companyTitle}</Typography>
-                    <span className={classes.hoverSubtitle}></span>
-                    {props.data.techUsed}
+                    <span className={classes.hoverSubtitle}>{props.data.techUsed}</span>
+                    
                 </Box>
                 <Box className={classes.cardHalf}>
                     <Button
                         onClick={handleOpen}
+                        color='primary'
+                        variant="outlined"
+                        disableElevation
                     >
                         LEARN MORE
                     </Button>
