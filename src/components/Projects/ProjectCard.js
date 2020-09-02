@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
 
-import { Grid, Typography, Card, CardMedia, CardActionArea, Modal, Button, Box} from '@material-ui/core'
-import { Fade, Backdrop } from '@material-ui/core'
+import { Grid, Typography, Card, CardMedia, CardActionArea, Button, Box, Container } from '@material-ui/core'
 
 import ProjectModal from './ProjectModal'
 
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles( theme => ({
-    grid:{
-        position:"relative"
+    card:{
+        position:"relative",
+        height: '280px',
     },
-    root:{
+    front:{
         position:"absolute",
         width: "100%",
-        boxShadow:"none"
+        boxShadow:"none",
     },
     cardImage:{
         height: "280px",
@@ -28,10 +28,12 @@ const useStyles = makeStyles( theme => ({
         height: "280px",
         width: "100%",
         flexDirection:"column",
+        justifyContent:"space-evenly",
     },
     hoverTitle:{
         fontWeight: '700',
-        fontSize: '2rem'
+        fontSize: '2rem',
+        marginBottom: theme.spacing(0.5)
     },
     hoverSubtitle:{
         color: theme.palette.primary.main,
@@ -39,13 +41,14 @@ const useStyles = makeStyles( theme => ({
     },
     cardHalf:{
         display:"flex",
-        flexGrow:"1",
-        justifyContent:"center",
         alignItems:"center",
         textAlign: "center",
         flexDirection:"column",
     },
-
+    button:{
+        border: `1.5px solid ${theme.palette.primary.main}`,
+        width: '180px'
+    }
 }));
 
 export default function ProjectCard(props){
@@ -60,64 +63,54 @@ export default function ProjectCard(props){
         setHover(false)
     };
 
-    const handleMouseEnter = () => {
-        setHover(true);
-        console.log("mouse entered", hover)
-    }
-    const handleMouseLeave = () => {
-        setHover(false);
-        console.log("mouse left", hover)
-    }
+    const handleMouseEnter = () => setHover(true);
+    const handleMouseLeave = () => setHover(false);
 
     return(
-        <Grid item xs={12} md={6} lg={4} className={classes.grid}
+        <Grid item xs={12} md={6} lg={4}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <Card 
-                className={classes.root}
-                style={{opacity: hover ? '0' : '1' }}
-            >
-                <CardActionArea>
+            <div className={classes.card}>
+                <Card 
+                    className={classes.front}
+                    style={{opacity: hover ? '0' : '1' }}
+                >
+                    
                     <CardMedia 
                         className={classes.cardImage}
                         image={props.data.cardImage}
                         title={props.data.companyTitle}
                     />
-                    {/* <Typography variant="h3" className={classes.cardTitle}>
-                        {props.data.companyTitle}
-                    </Typography> */}
-                </CardActionArea>
-                <ProjectModal 
-                    open={open}
-                    handleClose={handleClose}
-                    data={props.data}
-                />
-                
-            </Card>
-            <Box
-                style={{visibility: hover ? 'visible' : 'hidden'}}
-                className={classes.hover}
-                display="flex"
-            >
-                <Box className={classes.cardHalf}>
-                    <Typography variant="h4" className={classes.hoverTitle}>{props.data.companyTitle}</Typography>
-                    <span className={classes.hoverSubtitle}>{props.data.techUsed}</span>
                     
+                    <ProjectModal 
+                        open={open}
+                        handleClose={handleClose}
+                        data={props.data}
+                    />
+                </Card>
+                <Box
+                    style={{visibility: hover ? 'visible' : 'hidden',}}
+                    className={classes.hover}
+                    display="flex"
+                >
+                    <Box className={classes.cardHalf}>
+                        <Typography variant="h4" className={classes.hoverTitle}>{props.data.companyTitle}</Typography>
+                        <span className={classes.hoverSubtitle}>{props.data.techUsed}</span>
+                    </Box>
+                    <Box className={classes.cardHalf}>
+                        <Button
+                            onClick={handleOpen}
+                            size="large"
+                            color='primary'
+                            variant="outlined"
+                            className={classes.button}
+                            disableElevation
+                        > LEARN MORE  
+                        </Button>
+                    </Box>
                 </Box>
-                <Box className={classes.cardHalf}>
-                    <Button
-                        onClick={handleOpen}
-                        color='primary'
-                        variant="outlined"
-                        disableElevation
-                    >
-                        LEARN MORE
-                    </Button>
-                </Box>
-
-
-            </Box>
+            </div>
         </Grid>
     )
 }
