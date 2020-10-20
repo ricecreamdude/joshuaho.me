@@ -10,7 +10,6 @@ import Projects from '../components/Projects/Projects'
 // Inspiration: http://findmatthew.com/
 
 function Home(){
-
     return(
         <Box>
             <Header />
@@ -20,7 +19,6 @@ function Home(){
             {/* Proud to have worked with some companies */}
         </Box>
     )
-
 };
 
 export default Home;
